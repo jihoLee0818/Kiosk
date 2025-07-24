@@ -34,9 +34,11 @@ public class Kiosk {
             if (categoryChoice == 0) {
                 System.out.println("프로그램을 종료합니다.");
                 break;
-            }
-
-            if (categoryChoice > 0 && categoryChoice <= menus.size()) {
+            } else if (categoryChoice == 5) {
+                cart.clearCart();
+                System.out.println("장바구니가 비워졌습니다.");
+                continue;
+            } else if (categoryChoice > 0 && categoryChoice <= menus.size()) {
                 Menu selectedMenu = menus.get(categoryChoice - 1);
 
                 displayMenuItems(selectedMenu, sc);

@@ -17,6 +17,16 @@ public class Cart {
         }
 
     }
+    public double calculateTotalPrice() {
+        double totalPrice = 0.0;
+        for (MenuItem item : items) {
+            totalPrice += item.getPrice();
+        }
+        return totalPrice;
+    }
+    public void clearCart() {
+        items.clear();
+    }
 
     public boolean isCartEmpty() {
         return items.isEmpty();
